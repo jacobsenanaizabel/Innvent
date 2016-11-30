@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
-using InnventEconomist;
+using InnventEconnomics;
 
 [assembly: OwinStartup(typeof(Startup))]
-namespace InnventEconomist
+namespace InnventEconnomics
 {
     using System.Web.Http;
     using Microsoft.Owin;
