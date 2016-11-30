@@ -24,25 +24,25 @@ namespace InnventEconnomics.Controllers
         public static string currency;
 
 
-        public  string url_1 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date" + date_1 + "&currencies=" +
+        public  string url_1 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + date_1 + "&currencies=" +
              currency + "&format=1";
 
-        public string url_2 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date" + date_2 + "&currencies=" +
+        public string url_2 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + date_2 + "&currencies=" +
                      currency + "&format=1";
 
-        public string url_3 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date" + date_3 + "&currencies=" +
+        public string url_3 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + date_3 + "&currencies=" +
                      currency + "&format=1";
 
-        public string url_4 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date" + date_4 + "&currencies=" +
+        public string url_4 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + date_4 + "&currencies=" +
                      currency + "&format=1";
 
-        public string url_5 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date" + date_5 + "&currencies=" +
+        public string url_5 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + date_5 + "&currencies=" +
                      currency + "&format=1";
 
-        public string url_6 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date" + date_6 + "&currencies=" +
+        public string url_6 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + date_6 + "&currencies=" +
                      currency + "&format=1";
 
-        public string url_7 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date" + date_7 + "&currencies=" +
+        public string url_7 = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + date_7 + "&currencies=" +
                      currency + "&format=1";
 
         public HttpResponseMessage GetCurrencies()
