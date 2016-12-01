@@ -33,10 +33,10 @@ namespace InnventEconnomics.Controllers
 
                 urls[0] = "http://apilayer.net/api/historical?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + datas[0] + "&currencies=" +
              currency + "&format=1";
-                for (int i = 1; i <= 7; i++)
+                for (int i = 1; i < 7; i++)
                 {
                     datas[i] = DateTime.Now.AddDays(-i).ToString("yyyy-MM-dd");
-                    urls[i] = "http://apilayer.net/historical/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + datas[i] + "&currencies=" +
+                    urls[i] = "http://apilayer.net/api/historical?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + datas[i] + "&currencies=" +
              currency + "&format=1";
                 }
 
