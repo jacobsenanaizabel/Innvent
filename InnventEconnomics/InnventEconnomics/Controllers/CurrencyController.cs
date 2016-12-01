@@ -31,18 +31,18 @@ namespace InnventEconnomics.Controllers
                 Object[] request = new ObjectContent[7];
                 datas[0] = DateTime.Now.ToString("yyyy-MM-dd");
 
-                urls[0] = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + datas[0] + "&currencies=" +
+                urls[0] = "http://apilayer.net/api/historical?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + datas[0] + "&currencies=" +
              currency + "&format=1";
-                for (int i = 1; i < 7; i++)
+                for (int i = 1; i <= 7; i++)
                 {
                     datas[i] = DateTime.Now.AddDays(-i).ToString("yyyy-MM-dd");
-                    urls[i] = "https://apilayer.net/api/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + datas[i] + "&currencies=" +
+                    urls[i] = "http://apilayer.net/historical/live?access_key=bfbb3baa3a9fa924ef69d83cebb2111a&date=" + datas[i] + "&currencies=" +
              currency + "&format=1";
                 }
 
-                for (int i = 1; i <= 7; i++)
+                for (int i = 0; i < 7; i++)
                 {
-                    HttpWebRequest httpRequest = (HttpWebRequest)WebRequest.Create(urls[i]);
+                    HttpWebRequest httpRequest = (HttpWebRequest)WebRequest.Create(urls[0]);
                     httpRequest.Method = WebRequestMethods.Http.Get;
                     httpRequest.Accept = "application/json";
                     var response = (HttpWebResponse)httpRequest.GetResponse();
@@ -52,35 +52,11 @@ namespace InnventEconnomics.Controllers
                         JavaScriptSerializer js = new JavaScriptSerializer();
                    
                         var text = sr.ReadToEnd();
-                        CurrencyExchangeVo currencyObj =
-                            (CurrencyExchangeVo) js.Deserialize(text, typeof(CurrencyExchangeVo));
-                        /*
-                        switch (i)
-                        {
-                            case 1:
-                                currencyExchange.Dia1 = currencyObj;
+                        Result currencyObj =
+                            (Result) js.Deserialize(text, typeof(Result));
 
-                            case 2:
-                                currencyExchange.Dia2 = currencyObj;
-
-                            case 3:
-                                currencyExchange.Dia3 = currencyObj;
-
-                            case 4:
-                                currencyExchange.Dia4 = currencyObj;
-
-                            case 5:
-                                currencyExchange.Dia5 = currencyObj;
-
-                            case 6:
-                                currencyExchange.Dia6 = currencyObj;
-
-                            case 7:
-                                currencyExchange.Dia7 = currencyObj;
-
-                        }*/
+                        if (currencyExchange.dias != null) currencyExchange.dias[i] = currencyObj;
                     }
-
 
                 }
                 
@@ -91,6 +67,8 @@ namespace InnventEconnomics.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
         }
+
+   
 
     }
 }

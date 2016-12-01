@@ -8,14 +8,7 @@ namespace InnventEconnomics.Model
     public class CurrencyExchangeVo
     {
         public string nome;
-        public Result Dia1;
-        public Result Dia2;
-        public Result Dia3;
-        public Result Dia4;
-        public Result Dia5;
-        public Result Dia6;
-        public Result Dia7;
-
+        public Result[] dias = new Result[7];
     }
 
     public partial class Result
